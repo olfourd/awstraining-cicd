@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello world
 run-name: Hello ${{ inputs.name }} run
 
 on:
@@ -19,19 +19,19 @@ jobs:
     steps:
       - name: Print name
         run: |
-          echo "Hello ${{ inputs.name }}! Welcome sweaty!"
+          echo "Hello ${{ inputs.name}}! Welcome Sweaty!"
 
-  print_Last_name:
+  print_last_name:
     runs-on: ubuntu-latest
     steps:
       - name: Print last name
         run: |
-          echo "Your last name is ${{ inputs.last_name }}"
+          echo "Your last name is ${{ inputs.last_name }}"-
       - id: count_characters
         name: Count characters
         run: |
           last_name="${{ inputs.last_name }}"
-          lentgth= ${#last_name}
+          length=${#last_name}
           echo "length=$length" >> $GITHUB_OUTPUT
     outputs:
       last_name_length: ${{ steps.count_characters.outputs.length }}
